@@ -23,6 +23,16 @@ test("for 5 prints 1, 2, Fizz, 4, Buzz", () => {
 test("for 20 prints 1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz", () => {
   const result = fizzbuzz(20);
   expect(result).toEqual(
-    "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, 13, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz"
+    "1, 2, Fizz, 4, Buzz, Fizz, 7, 8, Fizz, Buzz, 11, Fizz, Fizz, 14, FizzBuzz, 16, 17, Fizz, 19, Buzz"
   );
+});
+
+test("for 51 ends with FizzBuzz", () => {
+  const result = fizzbuzz(51);
+  expect(result.substr(-"FizzBuzz".length)).toEqual("FizzBuzz");
+});
+
+test("for 52 ends with Buzz", () => {
+  const result = fizzbuzz(52);
+  expect(result.substr(-"Buzz".length)).toEqual("Buzz");
 });

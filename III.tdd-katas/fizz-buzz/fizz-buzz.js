@@ -1,8 +1,16 @@
 const range = (number) => [...Array(number).keys()].map((n) => n + 1);
 
-const isFizz = (num) => num % 3 === 0;
-const isBuzz = (num) => num % 5 === 0;
-const isFizzBuzz = (num) => num % 3 === 0 && num % 5 === 0;
+const isFizz = (num) => {
+  if (num % 3 === 0) return true;
+  if (("" + num).indexOf("3") >= 0) return true;
+  return false;
+};
+const isBuzz = (num) => {
+  if (num % 5 === 0) return true;
+  if (("" + num).indexOf("5") >= 0) return true;
+  return false;
+};
+const isFizzBuzz = (num) => isFizz(num) && isBuzz(num);
 
 module.exports = (number) =>
   range(number)
