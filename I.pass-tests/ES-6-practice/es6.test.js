@@ -3,8 +3,8 @@ const {
   defaultParameter,
   combineArrays,
   destructuring,
-  templateString
-} = require("./index");
+  templateString,
+} = require("./es6");
 
 test("function arrow is instance of a function", () => {
   expect(arrow).toBeInstanceOf(Function);
@@ -39,5 +39,5 @@ const arr2 = [4, 5, 6];
 const testObj = {
   cyf: "awesome",
   test: "100%",
-  learning: "always"
+  learning: "always",
 };

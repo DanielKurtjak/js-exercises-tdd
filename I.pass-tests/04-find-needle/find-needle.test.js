@@ -1,6 +1,6 @@
 var findTheNeedle = require("./find-needle");
 
-test("Find the needle", function() {
+test("Find the needle", function () {
   var words = ["house", "train", "slide", "needle", "book"];
   var expected = 3;
 
@@ -8,7 +8,7 @@ test("Find the needle", function() {
   expect(output).toEqual(expected);
 });
 
-test("Find the plant", function() {
+test("Find the plant", function () {
   var words = ["plant", "shelf", "arrow", "bird"];
   var expected = 0;
 

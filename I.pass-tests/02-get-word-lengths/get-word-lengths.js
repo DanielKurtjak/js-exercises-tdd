@@ -1,3 +1,3 @@
-var getWordLengths = function(someWords) {};
+var getWordLengths = (someWords) => someWords.map((w) => w.length);
 
 module.exports = getWordLengths;
