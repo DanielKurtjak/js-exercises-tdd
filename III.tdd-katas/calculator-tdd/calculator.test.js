@@ -25,6 +25,12 @@ describe.only("Calculator", () => {
     expect(result).toBe(6);
   });
 
+  test("should work with different, two char delimiter like '=='", () => {
+    const result = add("//==\n1\n2==3");
+
+    expect(result).toBe(6);
+  });
+
   test("should throw an error when negative number is passed", () => {
     expect(() => add("//;\n1\n-2;-3")).toThrowError(
       "negatives not allowed: -2, -3"
