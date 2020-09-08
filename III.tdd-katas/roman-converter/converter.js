@@ -24,34 +24,23 @@ const newRomanPairs = [
   [1, "I"],
 ];
 
+const generateConvertor = (pairs) => (number) => {
+  let romanNumber = "";
+  let pair = 0;
+  while (number) {
+    const [arab, roman] = pairs[pair++];
+    const whole = Math.floor(number / arab);
+    if (whole > 0) {
+      romanNumber += roman.repeat(whole);
+      number -= whole * arab;
+    }
+  }
+
+  return romanNumber;
+};
+
 module.exports = {
-  convertToOldRoman: (number) => {
-    let romanNumber = "";
-    let pair = 0;
-    while (number) {
-      const [arab, roman] = oldRomanPairs[pair++];
-      const whole = Math.floor(number / arab);
-      if (whole > 0) {
-        romanNumber += roman.repeat(whole);
-        number -= whole * arab;
-      }
-    }
+  convertToOldRoman: generateConvertor(oldRomanPairs),
 
-    return romanNumber;
-  },
-
-  convertToNewRoman: (number) => {
-    let romanNumber = "";
-    let pair = 0;
-    while (number) {
-      const [arab, roman] = newRomanPairs[pair++];
-      const whole = Math.floor(number / arab);
-      if (whole > 0) {
-        romanNumber += roman.repeat(whole);
-        number -= whole * arab;
-      }
-    }
-
-    return romanNumber;
-  },
+  convertToNewRoman: generateConvertor(newRomanPairs),
 };
